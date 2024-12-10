@@ -1,7 +1,8 @@
 const Frame = ({
     text,
     selectFont,
-    isSubmitted
+    isSubmitted,
+    onEdit
 }) => {
     return(
         <div style={{position: 'relative'}}>
@@ -14,19 +15,22 @@ const Frame = ({
                 }}
             />
             {isSubmitted && (
-                <p style={{
-                    position: 'absolute',
-                    top: '90%',
-                    left: '50%',
-                    transform: 'translate(-50%, -50%)',
-                    fontFamily: selectFont,
-                    fontSize: '24px',
-                    textAlign: 'center',
-                    color: 'black',
-                    margin: 0
-                }}>
+                <div>
+                    <p style={{
+                        position: 'absolute',
+                        top: '87.5%',
+                        left: '50%',
+                        transform: 'translate(-50%, -50%)',
+                        fontFamily: selectFont,
+                        fontSize: '24px',
+                        textAlign: 'center',
+                        color: 'black',
+                        margin: 0
+                    }}>
                     {text}
-                </p>
+                    </p>
+                    <button onClick = {onEdit} style={{}}>Edit Personalisation</button>
+                </div>
             )}
         </div>
     )
