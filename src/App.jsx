@@ -1,4 +1,7 @@
-import React, {useState} from 'react'
+import PersonalizeText from './components/PersonalizeText'
+
+import {useState} from 'react'
+
 const App = () => {
 
   const fonts = [
@@ -27,33 +30,14 @@ const App = () => {
     )
   }
   return (
-    <div>
-      <div>
-        <h2>Choose Font: </h2>
-        <div>
-          <label htmlFor='Font-select'>Choose a Font</label>
-          <div>
-            <select id='Font-select' value={selectFont} onChange = { (e) => setSelectFont(e.target.value)}>
-              {fonts.map((font) => (
-                <option key={font} value={font}>
-                  {font.split(',')[0]}
-                </option>
-              ))}
-            </select>
-          </div>
-        </div>
-        <h3>Personalization Below Photo:</h3>
-        <textarea
-          value = {text}
-          onChange = { (e) => setText(e.target.value)}
-        />
-        <button
-          onClick = {handleSubmit}
-        >
-          Submit
-        </button>
-      </div>
-    </div>
+    <PersonalizeText
+      selectFont={selectFont}
+      setSelectFont={setSelectFont}
+      fonts={fonts}
+      text={text}
+      setText={setText}
+      handleSubmit={handleSubmit}
+    />
   )
 }
 
