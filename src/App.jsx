@@ -23,10 +23,15 @@ const App = () => {
 
   if (isSubmitted) {
     return (
-      <div>
-        <p style = {{fontFamily: selectFont, fontSize: '24px'}}>
-          {text}
-        </p>
+      <div style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '100vh',
+        gap: '2rem',
+        padding: '2rem'
+      }}>
+      <Frame text={text} selectFont={selectFont} isSubmitted={isSubmitted}/>
       </div>
     )
   }
@@ -39,7 +44,7 @@ const App = () => {
       gap: '2rem',
       padding: '2rem'
     }}>
-      <Frame />
+      <Frame text={text} selectFont={selectFont} isSubmitted={isSubmitted}/>
       <PersonalizeText
         selectFont={selectFont}
         setSelectFont={setSelectFont}

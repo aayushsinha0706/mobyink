@@ -1,6 +1,10 @@
-const Frame = () => {
+const Frame = ({
+    text,
+    selectFont,
+    isSubmitted
+}) => {
     return(
-        <div>
+        <div style={{position: 'relative'}}>
             <img 
                 src='src/assets/frame.jpeg' 
                 style = {{
@@ -9,6 +13,21 @@ const Frame = () => {
                     objectFit: 'contain'
                 }}
             />
+            {isSubmitted && (
+                <p style={{
+                    position: 'absolute',
+                    top: '90%',
+                    left: '50%',
+                    transform: 'translate(-50%, -50%)',
+                    fontFamily: selectFont,
+                    fontSize: '24px',
+                    textAlign: 'center',
+                    color: 'black',
+                    margin: 0
+                }}>
+                    {text}
+                </p>
+            )}
         </div>
     )
 }
