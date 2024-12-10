@@ -1,4 +1,5 @@
 import PersonalizeText from './components/PersonalizeText'
+import Frame from './components/Frame'
 
 import {useState} from 'react'
 
@@ -30,14 +31,24 @@ const App = () => {
     )
   }
   return (
-    <PersonalizeText
-      selectFont={selectFont}
-      setSelectFont={setSelectFont}
-      fonts={fonts}
-      text={text}
-      setText={setText}
-      handleSubmit={handleSubmit}
-    />
+    <div style = {{
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      height: '100vh',
+      gap: '2rem',
+      padding: '2rem'
+    }}>
+      <Frame />
+      <PersonalizeText
+        selectFont={selectFont}
+        setSelectFont={setSelectFont}
+        fonts={fonts}
+        text={text}
+        setText={setText}
+        handleSubmit={handleSubmit}
+      />
+    </div>
   )
 }
 
