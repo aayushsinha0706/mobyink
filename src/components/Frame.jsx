@@ -29,7 +29,9 @@ const Frame = ({
                     }}>
                     {text}
                     </p>
-                    <button onClick = {onEdit} style={{}}>Edit Personalisation</button>
+                    <div>
+                        <button onClick = {onEdit} style={{}}>Edit Personalisation</button>
+                    </div>
                 </div>
             )}
         </div>
